@@ -24,7 +24,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         if (amount > questionService.getAll().size()) {
             throw new MoreQuestionsException("запрошено большее количество вопросов");
         }
-            for (int i = 1; examQuestion.size() < amount; i++) {
+            while (examQuestion.size() < amount) {
                 examQuestion.add(questionService.getRandomQuestion());
             }
         return examQuestion;
